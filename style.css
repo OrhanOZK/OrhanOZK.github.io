@@ -1,0 +1,48 @@
+/* Portfolio Styles */
+:root {
+    --wit: #FFFFFF;
+    --zwart: #000000;
+    --donkerblauw: #00008B;
+    --lichtblauw: #ADD8E6;
+    --grijs: #808080;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: var(--zwart);
+    background-color: var(--wit);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--donkerblauw);
+}
+
+.navbar {
+    background-color: var(--zwart) !important;
+}
+
+.hero {
+    background-color: var(--donkerblauw) !important;
+}
+
+.btn-primary {
+    background-color: var(--lichtblauw);
+    border-color: var(--lichtblauw);
+    color: var(--zwart);
+}
+
+.btn-primary:hover {
+    background-color: var(--grijs);
+    border-color: var(--grijs);
+}
+
+footer {
+    background-color: var(--zwart);
+    color: var(--wit);
+}
+
+.list-group-item {
+    background-color: var(--lichtblauw);
+    color: var(--zwart);
+}
