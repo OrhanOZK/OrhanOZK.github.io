@@ -1,48 +1,320 @@
-/* Portfolio Styles */
+/* =========================================================
+   GLOBAL DESIGN SYSTEM – PORTFOLIO THEMA ORHAN
+   Mobile-first, professioneel, gebaseerd op jouw kleurenschema
+   ========================================================= */
+
+/* ---------- KLEUREN ---------- */
 :root {
-    --wit: #FFFFFF;
-    --zwart: #000000;
-    --donkerblauw: #00008B;
-    --lichtblauw: #ADD8E6;
-    --grijs: #808080;
+    --color-bg: #031104;
+    --color-surface: #020617;
+    --color-surface-soft: #04101f;
+
+    --color-primary: #47D7FF;
+    --color-primary-soft: rgba(71, 215, 255, 0.12);
+    --color-primary-dark: #004662;
+    --color-secondary: #468CAC;
+
+    --color-text: #FFFFFF;
+    --color-text-soft: #e5e7eb;
+    --color-text-muted: #9ca3af;
+
+    --border-subtle: rgba(148, 163, 184, 0.25);
+    --shadow-soft: 0 18px 40px rgba(0, 0, 0, 0.45);
+}
+
+/* ---------- BASIS ---------- */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
-    color: var(--zwart);
-    background-color: var(--wit);
+    margin: 0;
+    padding-top: 72px; /* ruimte voor fixed navbar */
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    line-height: 1.6;
 }
 
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'Montserrat', sans-serif;
-    color: var(--donkerblauw);
+/* Links */
+a {
+    color: var(--color-primary);
+    text-decoration: none;
 }
 
+a:hover {
+    color: var(--color-secondary);
+}
+
+/* Secties */
+.section {
+    padding: 3.5rem 0;
+}
+
+.section-title {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+}
+
+.section-subtitle {
+    font-size: 0.95rem;
+    color: var(--color-text-muted);
+    margin-bottom: 1.5rem;
+}
+
+/* ---------- NAVIGATIE ---------- */
 .navbar {
-    background-color: var(--zwart) !important;
+    background-color: rgba(3, 17, 4, 0.96);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-subtle);
 }
 
+.navbar-brand {
+    color: var(--color-primary) !important;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+.navbar-toggler {
+    border-color: rgba(148, 163, 184, 0.5);
+}
+
+.navbar-toggler-icon {
+    filter: invert(1);
+}
+
+.nav-link {
+    color: var(--color-text-soft) !important;
+    font-size: 0.9rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    padding: 0.6rem 0.9rem !important;
+}
+
+.nav-link:hover {
+    color: var(--color-primary) !important;
+}
+
+.nav-link.active {
+    color: var(--color-primary) !important;
+    position: relative;
+}
+
+.nav-link.active::after {
+    content: "";
+    position: absolute;
+    left: 0.9rem;
+    right: 0.9rem;
+    bottom: 0.2rem;
+    height: 2px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+}
+
+/* ---------- HERO ---------- */
 .hero {
-    background-color: var(--donkerblauw) !important;
+    padding: 3.5rem 0 3.5rem;
+    background:
+        radial-gradient(circle at top left, rgba(71, 215, 255, 0.18) 0, transparent 55%),
+        radial-gradient(circle at bottom right, rgba(0, 70, 98, 0.7) 0, transparent 70%);
 }
 
-.btn-primary {
-    background-color: var(--lichtblauw);
-    border-color: var(--lichtblauw);
-    color: var(--zwart);
+.hero-title {
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
 }
 
-.btn-primary:hover {
-    background-color: var(--grijs);
-    border-color: var(--grijs);
+.hero-subtitle {
+    font-size: 1rem;
+    color: var(--color-text-soft);
+    max-width: 34rem;
 }
 
-footer {
-    background-color: var(--zwart);
-    color: var(--wit);
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.25rem 0.7rem;
+    border-radius: 999px;
+    border: 1px solid var(--color-primary);
+    background-color: var(--color-primary-soft);
+    color: var(--color-primary);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
 }
 
-.list-group-item {
-    background-color: var(--lichtblauw);
-    color: var(--zwart);
+/* ---------- BUTTONS ---------- */
+.btn-primary-custom {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    border: none;
+    color: var(--color-bg);
+    font-weight: 600;
+    border-radius: 999px;
+    padding: 0.6rem 1.4rem;
+    box-shadow: 0 10px 30px rgba(71, 215, 255, 0.35);
+}
+
+.btn-primary-custom:hover {
+    filter: brightness(1.05);
+    box-shadow: 0 14px 40px rgba(71, 215, 255, 0.45);
+}
+
+.btn-outline-custom {
+    border-radius: 999px;
+    border: 1px solid var(--color-primary);
+    color: var(--color-primary);
+    padding: 0.6rem 1.4rem;
+    background-color: transparent;
+}
+
+.btn-outline-custom:hover {
+    background-color: var(--color-primary);
+    color: var(--color-bg);
+}
+
+/* ---------- CARDS & SURFACES ---------- */
+.card {
+    background-color: var(--color-surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: 0.9rem;
+    box-shadow: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.card-header {
+    border-bottom: 1px solid var(--border-subtle);
+    background-color: transparent;
+    font-weight: 600;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-soft);
+    border-color: rgba(71, 215, 255, 0.5);
+}
+
+/* ---------- TAGS / BADGES ---------- */
+.tag {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.15rem 0.6rem;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    background-color: var(--color-primary-soft);
+    color: var(--color-primary);
+}
+
+/* ---------- PROJECT CARDS ---------- */
+.project-card {
+    height: 100%;
+}
+
+.project-card .card-title {
+    font-size: 1.05rem;
+    font-weight: 600;
+}
+
+.project-card .card-text {
+    font-size: 0.9rem;
+    color: var(--color-text-soft);
+}
+
+/* ---------- KLEURENSCHEMA BLOKKEN ---------- */
+.color-swatch {
+    width: 100%;
+    padding-top: 60%;
+    border-radius: 0.9rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.color-swatch span {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+}
+
+/* ---------- FORMULIEREN ---------- */
+.form-control,
+.form-select {
+    background-color: var(--color-surface-soft);
+    border: 1px solid var(--border-subtle);
+    color: var(--color-text-soft);
+    border-radius: 0.6rem;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 1px rgba(71, 215, 255, 0.4);
+    background-color: var(--color-surface-soft);
+    color: var(--color-text);
+}
+
+.form-label {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+}
+
+/* ---------- FOOTER ---------- */
+.footer {
+    border-top: 1px solid var(--border-subtle);
+    padding: 1.5rem 0;
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+}
+
+/* ---------- UTILITIES ---------- */
+.text-soft {
+    color: var(--color-text-soft);
+}
+
+.text-muted-custom {
+    color: var(--color-text-muted);
+}
+
+.chip {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.2rem 0.7rem;
+    border-radius: 999px;
+    background-color: rgba(15, 23, 42, 0.9);
+    border: 1px solid var(--border-subtle);
+    font-size: 0.75rem;
+}
+
+/* ---------- RESPONSIVE UPGRADES ---------- */
+@media (min-width: 768px) {
+    .hero {
+        padding: 5rem 0 5rem;
+    }
+
+    .hero-title {
+        font-size: 2.6rem;
+    }
+
+    .section {
+        padding: 4.5rem 0;
+    }
+}
+
+@media (min-width: 992px) {
+    .hero-title {
+        font-size: 3rem;
+    }
 }
