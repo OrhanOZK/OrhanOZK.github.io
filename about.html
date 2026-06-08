@@ -19,6 +19,13 @@ fetch("nav.html")
         document.getElementById("nav-placeholder").innerHTML = data;
     });
 </script>
+<div id="nav-placeholder"></div>
+
+<script>
+fetch("nav.html")
+    .then(res => res.text())
+    .then(data => document.getElementById("nav-placeholder").innerHTML = data);
+</script>
 
 <section class="container py-5">
     <h1 class="mb-4">Over mij</h1>
